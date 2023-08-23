@@ -9,10 +9,16 @@ const refs = {
   loadMore: document.querySelector('.load-more'),
 };
 
-let page = 1;
 const maxHits = 40;
+let page = 1;
 let maxPage = 1;
 let query = '';
+let lightbox = new SimpleLightbox('.photo-card a', {
+  captions: true,
+  captionsData: 'alt',
+  captionDelay: 300,
+  captionPosition: 'bottom',
+});
 
 refs.form.addEventListener('submit', onSearchSubmit);
 refs.loadMore.addEventListener('click', onLoadMore);
@@ -72,5 +78,5 @@ async function onLoadMore(e) {
 function renderImages(arr) {
   const markup = arr.map(hit => templateImages(hit)).join('');
   refs.gallery.insertAdjacentHTML('beforeend', markup);
-  lightbox = new SimpleLightbox('.gallery a');
+  lightbox.refresh();
 }
