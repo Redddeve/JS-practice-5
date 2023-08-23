@@ -38,7 +38,9 @@ async function onSearchSubmit(e) {
 
     if (response.totalHits > 0) {
       renderImages(response.hits);
-      Notify.success(`Hooray! We found ${response.totalHits} images.`);
+      Notify.success(`Hooray! We found ${response.totalHits} images.`, {
+        timeout: 2500,
+      });
     }
 
     if (response.totalHits > 40) {

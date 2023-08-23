@@ -20,7 +20,10 @@ export async function getImages(query, page) {
     }
     if (res.data.total === 0) {
       Notify.failure(
-        'Sorry, there are no images matching your search query. Please try again.'
+        'Sorry, there are no images matching your search query. Please try again.',
+        {
+          timeout: 2000,
+        }
       );
     }
     return res.data;
