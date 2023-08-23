@@ -1,8 +1,4 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+@import '~node_modules/modern-normalize/modern-normalize.css';
 
 body {
   font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
@@ -12,15 +8,73 @@ body {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   height: fit-content;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+  margin-block: 0;
 }
 
 img {
   display: block;
   max-width: 100%;
-  height: auto;
-  border-radius: 10px;
+}
+
+.is-hidden {
+  visibility: hidden;
+  pointer-events: none;
+  position: absolute;
+}
+
+.search-form,
+.gallery {
+  margin-bottom: 20px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+}
+
+.photo-card {
+  display: flex;
+  flex-direction: column;
+
+  /* max-width: 420px; */
+  /* max-height: 360px; */
+
+  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 1);
+}
+.photo-card img {
   object-fit: cover;
+}
+.photo-card a {
+  flex-basis: calc((100% - 90px) / 4);
+}
+
+.info {
+  display: flex;
+  justify-content: space-around;
+  padding: 16px 0 16px;
+  margin: 0;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
