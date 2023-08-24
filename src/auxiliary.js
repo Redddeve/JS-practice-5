@@ -22,6 +22,7 @@ export async function getImages(query, page) {
       Notify.failure(
         'Sorry, there are no images matching your search query. Please try again.',
         {
+          clickToClose: true,
           timeout: 2000,
         }
       );
